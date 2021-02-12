@@ -1,18 +1,12 @@
 {
-  "name": "webpack-template",
+  "name": "project-name",
   "version": "1.0.0",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
     "start": "npm run build & webpack-dev-server --open --mode development",
-    "lint": "eslint src/js/*.js",
+    "lint": "eslint ./src/js/*.js",
     "test": "jest --coverage --verbose"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "html"
-    ]
   },
   "keywords": [],
   "author": "",
@@ -22,6 +16,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "dotenv-webpack": "^6.0.0",
     "eslint": "^6.3.0",
     "eslint-loader": "^3.0.0",
     "file-loader": "^1.1.6",
@@ -34,7 +29,17 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "jquery": "^3.5.1"
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwabbe/Currency.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zwabbe/Currency/issues"
+  },
+  "homepage": "https://github.com/zwabbe/Currency#readme",
   "description": ""
 }

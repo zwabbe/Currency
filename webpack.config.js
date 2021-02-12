@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/main.js',
@@ -9,19 +10,21 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'eval-source-map',
-  devServer: {
-    contentBase: './dist'
+  devServer: {               
+    contentBase: './dist'    
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '',
-      template: './src/index.html',
+      title: 'Project',
+      template: 'src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -35,21 +38,23 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'assets/images/'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
           }
-        }
-      ]
+        ]
       },
+      
       {
-        test: /\.html$/,
+        test:/\.html$/,
         use: [
           'html-loader'
         ]
-      }
+      },
     ]
   }
 };
