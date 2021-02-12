@@ -1,11 +1,11 @@
 {
-  "name": "project-name",
+  "name": "currency",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
     "start": "npm run build & webpack-dev-server --open --mode development",
-    "lint": "eslint ./src/js/*.js",
+    "lint": "eslint src/*.js",
     "test": "jest --coverage --verbose"
   },
   "keywords": [],
